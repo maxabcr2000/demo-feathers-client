@@ -5,6 +5,6 @@ import App from './App';
 import FeathersClient from './utils/feathers';
 import registerServiceWorker from './registerServiceWorker';
 
-const client = new FeathersClient();
-ReactDOM.render(<App client={client}/>, document.getElementById('root'));
+const feathersAPI = new FeathersClient();
+ReactDOM.render(<App feathersAPI={feathersAPI}/>, document.getElementById('root'));
 registerServiceWorker();
