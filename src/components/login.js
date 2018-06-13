@@ -23,7 +23,7 @@ class LoginForm extends Component {
     }
 
     handleSignIn = () => {
-      const {feathersAPI} = this.props;
+      const {feathersAPI, handleUserName} = this.props;
 
       feathersAPI.client.authenticate({
         strategy: 'local',
@@ -38,6 +38,9 @@ class LoginForm extends Component {
         // show login page
         console.log('err:', err);
       });
+
+      handleUserName(this.state.username);
+
     }
 
     handleSignUp = () => {
