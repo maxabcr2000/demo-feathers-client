@@ -28,7 +28,7 @@ class MessagePanel extends Component {
 
         const data = {
             text: this.state.input,
-            to: this.state.target,
+            receiver: this.state.target,
         };
 
         feathersAPI.client.service('messages').create(data);
