@@ -58,8 +58,10 @@ class App extends Component {
     console.log("this.state:", this.state);
     return (
       <div>
-        { !this.state.login && <LoginForm feathersAPI={this.props.feathersAPI} handleUserName={this.handleUserName} />}
-        {this.state.login && <MessagePanel username={this.state.username} feathersAPI={this.props.feathersAPI} messages={this.state.messages}/>}
+        {/* { !this.state.login && <LoginForm feathersAPI={this.props.feathersAPI} handleUserName={this.handleUserName} />} */}
+        {/* {this.state.login && <MessagePanel username={this.state.username} feathersAPI={this.props.feathersAPI} messages={this.state.messages}/>} */}
+        <LoginForm feathersAPI={this.props.feathersAPI} handleUserName={this.handleUserName} />
+        <MessagePanel username={this.state.username} feathersAPI={this.props.feathersAPI} messages={this.state.messages}/>
         {/* <button onClick={this.handleTest}>Test</button> */}
       </div>
     );
