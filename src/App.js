@@ -34,6 +34,32 @@ class App extends Component {
       let messages = this.state.messages;
       messages.push(message);
 
+      console.log(messages);
+
+      this.setState({
+        messages: messages
+      });
+    });
+
+    feathersAPI.client.service('messages').on('updated', message => {
+      console.log('on messages updated:', message);
+      
+      let messages = this.state.messages;
+      messages.push(message);
+
+      console.log("messges:", messages);
+
+      this.setState({
+        messages: messages
+      });
+    });
+
+    feathersAPI.client.service('messages').on('removed', message => {
+      console.log('on messages removed:', message);
+      
+      let messages = this.state.messages;
+      messages.push(message);
+
       console.log("messges:", messages);
 
       this.setState({

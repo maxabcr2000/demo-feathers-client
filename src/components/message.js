@@ -38,7 +38,7 @@ class MessagePanel extends Component {
         const {messages, username} = this.props;
 
         const messageList = messages.map((m, index) => {
-            return <h3 key={index}>{m.text + "\n"}</h3>;
+            return <h3 key={index}>{m.content + "\n"}</h3>;
         });
 
         return (
